@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import cart from "./cart";
 
 export default function NavBar({ cartValue }) {
   return (
@@ -26,9 +28,7 @@ export default function NavBar({ cartValue }) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link">
-                About
-              </a>
+              <a className="nav-link">About</a>
             </li>
             <li className="nav-item dropdown">
               <a
@@ -42,18 +42,20 @@ export default function NavBar({ cartValue }) {
               </a>
             </li>
           </ul>
-          <form className="d-flex">
-            <button className="btn btn-outline-dark" type="submit">
-              <i class="bi-cart-fill me-1"></i>
-              Cart
-              <span
-                className="badge bg-dark text-white ms-1 rounded-pill"
-                id="cart-count"
-              >
-                {cartValue}
-              </span>
-            </button>
-          </form>
+          <Link to="/cart" >
+            <form className="d-flex">
+              <button className="btn btn-outline-dark" type="submit">
+                <i class="bi-cart-fill me-1"></i>
+                Cart
+                <span
+                  className="badge bg-dark text-white ms-1 rounded-pill"
+                  id="cart-count"
+                >
+                  {cartValue}
+                </span>
+              </button>
+            </form>
+          </Link>
         </div>
       </div>
     </nav>
